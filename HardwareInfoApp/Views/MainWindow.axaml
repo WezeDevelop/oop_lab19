@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:HardwareInfoApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="HardwareInfoApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Системна інформація Mac OS">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Margin="10">
+    <TextBlock Text="Інформація про систему:" FontSize="20" Margin="0,0,0,10"/>
+    <Button Content="Отримати інформацію" Click="OnGetInfoClick" Width="200"/>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+      <TextBox Name="InfoTextBox" AcceptsReturn="True" IsReadOnly="True" Height="500" TextWrapping="Wrap"/>
+    </ScrollViewer>
+  </StackPanel>
+
+</Window>
